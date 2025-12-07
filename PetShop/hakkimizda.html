@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda - PetShop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header, .about-container, footer {
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideDown 0.8s ease-out forwards;
+        }
+
+        header {
+            animation-delay: 0.1s;
+        }
+
+        .about-container {
+            animation-delay: 0.3s;
+        }
+
+        footer {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes slideDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        
+        .logo img {
+            max-height: 70px;
+            width: auto;
+            transition: transform 0.9s ease;
+        }
+        
+        .logo:hover img {
+            transform: scale(1.1);
+        }
+        
+        nav {
+            margin-left: auto;
+            margin-right: 20px;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            min-height: 60vh;
+        }
+
+        .about-container h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+
+        .about-section {
+            margin-bottom: 40px;
+        }
+
+        .about-section h2 {
+            color: #3649b4;
+            margin-bottom: 15px;
+            font-size: 26px;
+            border-bottom: 2px solid #3649b4;
+            padding-bottom: 10px;
+        }
+
+        .about-section p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .value-card {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #3649b4;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .value-card h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .value-card p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+        }
+
+        .stat-item {
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        footer p {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            margin-top: 50px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+
+            .logo {
+                margin-left: 0;
+                margin-bottom: 15px;
+            }
+
+            nav {
+                margin-left: 0;
+                margin-right: 0;
+                width: 100%;
+                justify-content: center;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 10px;
+            }
+
+            nav ul li {
+                margin: 5px 10px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+            }
+
+            .about-container {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            .about-container h1 {
+                font-size: 28px;
+            }
+
+            .about-section h2 {
+                font-size: 22px;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stats-container {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .stat-item {
+                margin-bottom: 20px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .stat-label {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                max-height: 50px;
+            }
+
+            nav ul li {
+                margin: 5px 8px;
+            }
+
+            nav ul li a {
+                font-size: 12px;
+            }
+
+            .about-container {
+                padding: 15px;
+                margin: 15px;
+            }
+
+            .about-container h1 {
+                font-size: 24px;
+                margin-bottom: 25px;
+            }
+
+            .about-section {
+                margin-bottom: 30px;
+            }
+
+            .about-section h2 {
+                font-size: 20px;
+            }
+
+            .about-section p {
+                font-size: 14px;
+            }
+
+            .value-card {
+                padding: 20px;
+            }
+
+            .value-card h3 {
+                font-size: 18px;
+            }
+
+            .value-card p {
+                font-size: 14px;
+            }
+
+            .stat-number {
+                font-size: 32px;
+            }
+
+            .stat-label {
+                font-size: 14px;
+            }
+
+            footer p {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="anasayfa.html" style="text-decoration: none;">
+            <div class="logo">
+                <img src="PhotoshopExtension_Image.png" alt="logo">
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="anasayfa.html">Anasayfa</a></li>
+                <li><a href="anasayfa.html">Ürünler</a></li>
+                <li><a href="iletişim.html">İletişim</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="about-container">
+        <h1>Hakkımızda</h1>
+        
+        <div class="about-section">
+            <h2>Biz Kimiz?</h2>
+            <p>
+                PetShop olarak 2015 yılından beri evcil hayvan sahiplerine en kaliteli ürünleri sunma misyonuyla yola çıktık. 
+                Köpek, kedi ve diğer evcil hayvanlar için geniş ürün yelpazemiz ile dostlarınızın mutluluğu ve sağlığı için 
+                çalışıyoruz. Uzman ekibimiz, her zaman sizlere en iyi hizmeti sunmak için burada.
+            </p>
+            <p>
+                Müşteri memnuniyeti bizim için her şeyden önce gelir. Sadece ürün satmakla kalmıyor, aynı zamanda 
+                evcil hayvan sahiplerine danışmanlık hizmeti de sunuyoruz. Sevimli dostlarınızın ihtiyaçlarına en uygun 
+                ürünleri seçmenizde size yardımcı olmaktan mutluluk duyuyoruz.
+            </p>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Yıllık Tecrübe</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">Mutlu Müşteri</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Farklı Ürün</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Destek</div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>Değerlerimiz</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>🐾 Kalite</h3>
+                    <p>Sadece en kaliteli ve güvenilir markaların ürünlerini sunuyoruz. Evcil dostlarınızın sağlığı bizim önceliğimiz.</p>
+                </div>
+                <div class="value-card">
+                    <h3>💚 Güven</h3>
+                    <p>Müşterilerimizle uzun vadeli güven ilişkileri kurmayı hedefliyoruz. Şeffaflık ve dürüstlük ilkelerimizdir.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🎯 Müşteri Odaklılık</h3>
+                    <p>Müşteri memnuniyeti her zaman önceliğimizdir. 7/24 destek ekibimizle yanınızdayız.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🚀 Yenilikçilik</h3>
+                    <p>Sektördeki en yeni ürünleri takip ediyor ve müşterilerimize sunuyoruz.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <h2>Neden Bizi Tercih Etmelisiniz?</h2>
+            <p>
+                ✓ Geniş ürün yelpazesi ve güvenilir markalar<br>
+                ✓ Uzman ekip danışmanlığı<br>
+                ✓ Hızlı ve güvenli teslimat<br>
+                ✓ Uygun fiyat garantisi<br>
+                ✓ Kolay iade ve değişim<br>
+                ✓ Sadakat programı ve özel kampanyalar
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 PetShop. Tüm hakları saklıdır.</p>
+    </footer>
+</body>
+</html>
