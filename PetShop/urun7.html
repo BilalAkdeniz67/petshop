@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acana Kedi Maması Detay</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            align-items: center; 
+        }
+
+        header, section {
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: slideDown 0.8s ease-out forwards;
+        }
+
+        header {
+            animation-delay: 0.1s;
+        }
+
+        section {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes slideDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        .logo img {
+            max-height: 70px; 
+            width: auto;
+            display: flex; 
+            transition: transform 0.9s ease; 
+        }
+        .logo:hover img {
+            transform: scale(1.1);
+        }
+        nav {
+            margin-left: auto;
+            margin-right: 20px;
+            display: flex;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+        }
+
+        section.product-detail-container {
+            display: flex;
+            justify-content: center; 
+            padding: 40px 20px;
+            min-height: 70vh; 
+        }
+
+        .product-wrapper {
+            display: flex;
+            width: 900px; 
+            background-color: white;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .product-wrapper:hover {
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-image-area {
+            flex: 1; 
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #eee;
+        }
+
+        .product-image-area img:hover {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            border-radius: 5px;
+            transition: transform 0.5s ease;
+            transform: scale(1.2);
+        }
+
+        .product-image-area img {
+            max-width: 100%;
+            height: auto;
+            max-height: 400px;
+            border-radius: 5px;
+            transition: transform 0.5s ease;
+        }
+
+
+        .product-info-area {
+            flex: 1; 
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .urun-isim {
+            font-size: 28px;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .urun-aciklama {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .urun-fiyat {
+            font-size: 36px;
+            font-weight: 700;
+            color: #3649b4; 
+            margin-bottom: 25px;
+        }
+
+        .stok-durumu {
+            font-size: 14px;
+            color: #d9534f;
+            margin-top: 15px;
+        }
+
+        .buy-button {
+            background-color: #333; 
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #4b4a4a;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="anasayfa.html">
+            <div class="logo"   >
+                <img src="PhotoshopExtension_Image.png" alt="logo">
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="anasayfa.html">Anasayfa</a></li>
+                <li><a href="anasayfa.html">Ürünler</a></li>
+                <li><a href="iletişim.html">İletişim</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="product-detail-container">
+        <div class="product-wrapper">
+            <div class="product-image-area">
+                <img src="pro-plan-elegant-optiderma-somonlu-yet-8-3125.jpg" alt="">
+            </div>
+            <div class="product-info-area">
+                <h2 class="urun-isim">Pro Plan Elegant Optiderma Somonlu Yetişkin Kedi Maması 10 kg</h2>
+                
+                <p class="urun-aciklama">
+                    Pro Plan Elegant Optiderma Somonlu Yetişkin Kedi Maması, hassas cilde sahip yetişkin kediler için özel olarak formüle edilmiştir. Somon eti, yüksek kaliteli protein kaynağı olarak kullanılırken, omega-3 ve omega-6 yağ asitleri cilt sağlığını destekler ve tüylerin parlaklığını artırır. İçeriğindeki prebiyotik lifler sindirim sistemini destekler ve bağışıklık sistemini güçlendirir. Ayrıca, antioksidanlar kedinizin genel sağlığını korumaya yardımcı olur. Pro Plan Elegant Optiderma, kedinizin cilt sağlığını iyileştirmek ve yaşam kalitesini artırmak için ideal bir beslenme seçeneğidir.
+                </p>
+                <div class="urun-fiyat">₺5.300,00</div>
+                
+                <button class="buy-button">Sepete Ekle</button>
+                
+                <div class="stok-durumu">Stok Durumu: **Tükendi**</div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
