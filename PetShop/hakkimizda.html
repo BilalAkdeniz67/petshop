@@ -40,19 +40,19 @@
         header {
             background-color: #333;
             color: white;
-            padding: 10px 0;
+            padding: 1% 0; /* Ürünler sayfası ile uyumlu % değer */
             display: flex;
             align-items: center;
             flex-wrap: wrap;
         }
         
         .logo {
-            margin-left: 20px;
+            margin-left: 2%; /* Ürünler sayfası ile uyumlu % değer */
             cursor: pointer;
         }
         
         .logo img {
-            max-height: 70px;
+            height: 70px; /* Ürünler sayfası ile uyumlu sabit değer */
             width: auto;
             transition: transform 0.9s ease;
         }
@@ -63,7 +63,7 @@
         
         nav {
             margin-left: auto;
-            margin-right: 20px;
+            margin-right: 2%; /* Ürünler sayfası ile uyumlu % değer */
         }
         
         nav ul {
@@ -73,16 +73,14 @@
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-        }
-        
-        nav ul li {
-            margin: 0 15px;
+            gap: 2vw; /* Ürünler sayfası ile uyumlu gap değeri */
         }
         
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
+            font-size: clamp(12px, 1.2vw, 16px); /* Ürünler sayfası ile uyumlu font boyutu */
         }
 
         .about-container {
@@ -183,38 +181,41 @@
 
         footer p {
             text-align: center;
-            padding: 10px;
+            padding: 2%; /* Ürünler sayfası ile uyumlu % değer */
             background-color: #333;
             color: white;
             margin-top: 50px;
+            font-size: clamp(12px, 1.2vw, 14px); /* Ürünler sayfası ile uyumlu font boyutu */
         }
 
-        /* RESPONSIVE */
+        /* RESPONSIVE - Tablet (768px ve altı) */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                padding: 15px 0;
+                padding: 3% 0; /* Ürünler sayfası ile uyumlu % değer */
             }
 
             .logo {
-                margin-left: 0;
-                margin-bottom: 15px;
+                margin: 0 0 2% 0; /* Ürünler sayfası ile uyumlu % değer */
+            }
+
+            .logo img {
+                height: 50px; /* Ürünler sayfası ile uyumlu sabit değer */
             }
 
             nav {
-                margin-left: 0;
-                margin-right: 0;
+                margin: 0;
                 width: 100%;
                 justify-content: center;
             }
 
             nav ul {
                 justify-content: center;
-                gap: 10px;
+                gap: 3vw; /* Ürünler sayfası ile uyumlu vw değeri */
             }
 
             nav ul li {
-                margin: 5px 10px;
+                margin: 0; /* Ürünler sayfasındaki gibi margin sıfırlandı, gap kullanılıyor */
             }
 
             nav ul li a {
@@ -257,19 +258,16 @@
             }
         }
 
+        /* RESPONSIVE - Mobil (480px ve altı) */
         @media (max-width: 480px) {
             .logo img {
-                max-height: 50px;
-            }
-
-            nav ul li {
-                margin: 5px 8px;
+                height: 40px; /* Ürünler sayfası ile uyumlu sabit değer */
             }
 
             nav ul li a {
                 font-size: 12px;
             }
-
+            
             .about-container {
                 padding: 15px;
                 margin: 15px;
