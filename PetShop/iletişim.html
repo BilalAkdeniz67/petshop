@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>İletişim - PetShop</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
             background-color: #f4f4f4;
         }
         
-        /* Yukarıdan aşağıya inen animasyon */
         header, .contact-container, footer {
             opacity: 0;
             transform: translateY(-50px);
@@ -41,18 +44,19 @@
         header {
             background-color: #333;
             color: white;
-            padding: 10px 0;
+            padding: 1% 0; 
             display: flex;
             align-items: center;
+            flex-wrap: wrap; 
         }
         
         .logo {
-            margin-left: 20px;
+            margin-left: 2%;
             cursor: pointer;
         }
         
         .logo img {
-            max-height: 70px;
+            height: 70px; 
             width: auto;
             transition: transform 0.9s ease;
         }
@@ -63,7 +67,7 @@
         
         nav {
             margin-left: auto;
-            margin-right: 20px;
+            margin-right: 2%; 
         }
         
         nav ul {
@@ -72,16 +76,15 @@
             padding: 0;
             display: flex;
             align-items: center;
-        }
-        
-        nav ul li {
-            margin: 0 15px;
+            flex-wrap: wrap; 
+            gap: 2vw; 
         }
         
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
+            font-size: clamp(12px, 1.2vw, 16px); 
         }
 
         .contact-container {
@@ -186,22 +189,13 @@
 
         footer p {
             text-align: center;
-            padding: 10px;
+            padding: 2%; 
             background-color: #333;
             color: white;
             margin-top: 50px;
+            font-size: clamp(12px, 1.2vw, 14px); 
         }
 
-        @media (max-width: 768px) {
-            .contact-content {
-                flex-direction: column;
-            }
-            
-            .contact-container {
-                padding: 20px;
-                margin: 20px;
-            }
-        }
     </style>
 </head>
 <body>
