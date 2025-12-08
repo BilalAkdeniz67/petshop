@@ -223,7 +223,7 @@ footer p {
     }
     
     .product-wrapper {
-        flex-direction: column;
+        flex-direction: column; 
         width: 95%;
         max-width: 500px;
     }
@@ -262,6 +262,10 @@ footer p {
     
     .product-wrapper {
         width: 98%;
+    }
+
+    .product-image-area img {
+        max-height: 250px;
     }
 
     .product-info-area {
