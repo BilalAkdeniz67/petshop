@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetShop - Ürünler</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
         }
         
         header, section, footer {
@@ -39,20 +43,19 @@
         header {
             background-color: #333;
             color: white;
-            padding: 10px 0;
+            padding: 1% 0;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
         }
 
         .logo {
-            margin-left: 20px;
+            margin-left: 2%;
         }
 
         .logo img {
-            max-height: 70px;
+            height: 70px;
             width: auto;
-            display: flex; 
             transition: transform 0.9s ease; 
         }
 
@@ -66,28 +69,22 @@
 
         nav {
             margin-left: auto;
-            margin-right: 20px;
-            display: flex;
+            margin-right: 2%;
         }
 
         nav ul {
             list-style-type: none;
-            margin: 0;
-            padding: 0;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-        }
-
-        nav ul li {
-            margin: 0 15px;
+            gap: 2vw;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: bold;
-            display: flex;
+            font-size: clamp(12px, 1.2vw, 16px);
         }
         
         .urunler {
@@ -96,7 +93,6 @@
             border-radius: 10px;
             margin: 10px;
             width: 280px;
-            height: 330px;
             display: flex; 
             flex-direction: column; 
             align-items: center;
@@ -116,7 +112,7 @@
 
         .urunler img {
             width: 100%;
-            max-width: 260px; 
+            max-width: 260px;
             height: auto;
             border-radius: 10px;
             transition: transform 0.9s ease;
@@ -124,94 +120,74 @@
 
         .urunler p {
             margin-top: 15px;
-            font-size: 16px;
+            font-size: clamp(14px, 1.5vw, 16px);
             font-weight: bold;
             text-align: center;
-            padding: 0 10px;
+            padding: 0 5%;
         }
         
         section {
             display: flex;
             justify-content: center; 
-            padding: 20px;
+            align-items: stretch;
+            padding: 2%;
             flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        section a {
+            display: flex;
         }
 
         footer p {
             text-align: center;
-            padding: 10px;
+            padding: 2%;
             background-color: #333;
             color: white;
-            margin: 0;
+            font-size: clamp(12px, 1.2vw, 14px);
         }
 
-        /* RESPONSIVE TASARIM */
+        /* Mobil için tek sütun */
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
-                padding: 15px 0;
+                padding: 3% 0;
             }
 
             .logo {
-                margin-left: 0;
-                margin-bottom: 15px;
+                margin: 0 0 2% 0;
+            }
+
+            .logo img {
+                height: 50px;
             }
 
             nav {
-                margin-left: 0;
-                margin-right: 0;
+                margin: 0;
                 width: 100%;
                 justify-content: center;
             }
 
             nav ul {
                 justify-content: center;
-                gap: 10px;
-            }
-
-            nav ul li {
-                margin: 5px 10px;
-            }
-
-            nav ul li a {
-                font-size: 14px;
+                gap: 3vw;
             }
 
             .urunler {
-                width: 90%;
-                max-width: 350px;
-                margin: 15px auto;
-            }
-
-            section {
-                padding: 15px;
+                width: calc(50% - 20px);
+                min-width: 150px;
             }
         }
 
         @media (max-width: 480px) {
             .logo img {
-                max-height: 50px;
-            }
-
-            nav ul li {
-                margin: 5px 8px;
-            }
-
-            nav ul li a {
-                font-size: 12px;
+                height: 40px;
             }
 
             .urunler {
-                width: 95%;
-            }
-
-            .urunler p {
-                font-size: 14px;
-            }
-
-            footer p {
-                font-size: 12px;
-                padding: 15px 10px;
+                width: calc(100% - 20px);
+                max-width: 400px;
             }
         }
     </style>
