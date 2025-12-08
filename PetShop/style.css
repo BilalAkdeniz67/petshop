@@ -35,7 +35,7 @@ section {
 header {
     background-color: #333;
     color: white;
-    padding: 1% 0;
+    padding: 1% 0; 
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -47,7 +47,7 @@ header {
 }
 
 .logo img {
-    height: 70px;
+    height: 70px; 
     width: auto;
     display: flex;
     transition: transform 0.9s ease;
@@ -59,7 +59,7 @@ header {
 
 nav {
     margin-left: auto;
-    margin-right: 2%;
+    margin-right: 2%; 
     display: flex;
 }
 
@@ -179,12 +179,100 @@ section.product-detail-container {
     background-color: #4b4a4a;
 }
 
-
 footer p {
     text-align: center;
-    padding: 2%; 
+    padding: 2%;
     background-color: #333;
     color: white;
     font-size: clamp(12px, 1.2vw, 14px);
     margin-top: 50px;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 3% 0; 
+    }
+
+    .logo {
+        margin: 0 0 2% 0; 
+    }
+
+    .logo img {
+        height: 50px; 
+    }
+
+    nav {
+        margin: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 3vw; 
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+    
+    .product-wrapper {
+        flex-direction: column;
+        width: 95%;
+        max-width: 500px;
+    }
+
+    .product-image-area {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 20px;
+    }
+
+    .product-image-area img {
+        max-height: 300px;
+    }
+
+    .product-info-area {
+        padding: 20px;
+    }
+
+    .urun-isim {
+        font-size: 22px;
+    }
+
+    .urun-fiyat {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        height: 40px; 
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+    
+    .product-wrapper {
+        width: 98%;
+    }
+
+    .product-info-area {
+        padding: 15px;
+    }
+
+    .urun-isim {
+        font-size: 18px;
+    }
+
+    .urun-fiyat {
+        font-size: 24px;
+    }
 }
